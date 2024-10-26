@@ -1,89 +1,106 @@
-// Plugins
-import AutoImport from "unplugin-auto-import/vite";
-import Components from "unplugin-vue-components/vite";
-import Fonts from "unplugin-fonts/vite";
-import Layouts from "vite-plugin-vue-layouts";
-import Vue from "@vitejs/plugin-vue";
-import VueRouter from "unplugin-vue-router/vite";
-import Vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
+import { fileURLToPath } from 'url'
+import { defineConfig, loadEnv } from 'vite'
+import ElectronPlugin, { ElectronOptions } from 'vite-plugin-electron'
+import RendererPlugin from 'vite-plugin-electron-renderer'
+import EslintPlugin from 'vite-plugin-eslint'
+import VuetifyPlugin from 'vite-plugin-vuetify'
+import VueJsx from '@vitejs/plugin-vue-jsx'
+import Vue from '@vitejs/plugin-vue'
+import { rmSync } from 'fs'
+import { resolve, dirname } from 'path'
+import { builtinModules } from 'module'
 
-// Utilities
-import { defineConfig } from "vite";
-import { fileURLToPath, URL } from "node:url";
+const isDevEnv = process.env.NODE_ENV === 'development'
 
-// test-only
-import { viteMockServe } from "vite-plugin-mock";
+export default defineConfig(({ mode }) => {
+  process.env = {
+    ...(isDevEnv
+      ? {
+          ELECTRON_ENABLE_LOGGING: 'true'
+        }
+      : {}),
+    ...process.env,
+    ...loadEnv(mode, process.cwd())
+  }
 
-// https://vitejs.dev/config/
-export default defineConfig(({ command }) => {
+  rmSync('dist', { recursive: true, force: true })
+
+  const electronPluginConfigs: ElectronOptions[] = [
+    {
+      entry: 'src/main/index.ts',
+      onstart({ startup }) {
+        startup()
+      },
+      vite: {
+        root: resolve('.'),
+        build: {
+          assetsDir: '.',
+          outDir: 'dist/main',
+          rollupOptions: {
+            external: ['electron', ...builtinModules]
+          }
+        }
+      }
+    },
+    {
+      entry: 'src/preload/index.ts',
+      onstart({ reload }) {
+        reload()
+      },
+      vite: {
+        root: resolve('.'),
+        build: {
+          outDir: 'dist/preload'
+        }
+      }
+    }
+  ]
+
+  if (isDevEnv) {
+    electronPluginConfigs.push({
+      entry: 'src/main/index.dev.ts',
+      vite: {
+        root: resolve('.'),
+        build: {
+          outDir: 'dist/main'
+        }
+      }
+    })
+  }
+
   return {
-    plugins: [
-      VueRouter({
-        dts: "src/typed-router.d.ts",
-      }),
-      Layouts(),
-      AutoImport({
-        imports: [
-          "vue",
-          {
-            "vue-router/auto": ["useRoute", "useRouter"],
-          },
-        ],
-        dts: "src/auto-imports.d.ts",
-        eslintrc: {
-          enabled: true,
-        },
-        vueTemplate: true,
-      }),
-      Components({
-        dts: "src/components.d.ts",
-      }),
-      Vue({
-        template: { transformAssetUrls },
-      }),
-      // https://github.com/vuetifyjs/vuetify-loader/tree/master/packages/vite-plugin#readme
-      Vuetify({
-        autoImport: true,
-        styles: {
-          // configFile: "src/styles/settings.scss",
-          configFile: "src/styles/index.scss",
-        },
-      }),
-      Fonts({
-        google: {
-          families: [
-            {
-              name: "Roboto",
-              styles: "wght@100;300;400;500;700;900",
-            },
-          ],
-        },
-      }),
-      // test-only
-      viteMockServe({
-        // default
-        mockPath: "mock",
-        enable: command === "serve",
-      }),
-    ],
-    define: { "process.env": {} },
+    define: {
+      __VUE_I18N_FULL_INSTALL__: true,
+      __VUE_I18N_LEGACY_API__: false,
+      __INTLIFY_PROD_DEVTOOLS__: false
+    },
     resolve: {
+      extensions: ['.mjs', '.js', '.ts', '.vue', '.json', '.scss'],
       alias: {
-        "@": fileURLToPath(new URL("./src", import.meta.url)),
-      },
-      extensions: [".js", ".json", ".jsx", ".mjs", ".ts", ".tsx", ".vue"],
+        '@': resolve(dirname(fileURLToPath(import.meta.url)), 'src')
+      }
     },
-    // global sass variables
-    css: {
-      preprocessorOptions: {
-        scss: {
-          javascriptEnabled: true,
-          additionalData: '@import "./src/styles/variables.scss";',
-        },
-      },
+    base: './',
+    root: resolve('./src/renderer'),
+    publicDir: resolve('./src/renderer/public'),
+    clearScreen: false,
+    build: {
+      sourcemap: isDevEnv,
+      minify: !isDevEnv,
+      outDir: resolve('./dist')
     },
-    server: {
-      port: 3000,
-    },
-  };
-});
+    plugins: [
+      Vue(),
+      VueJsx(),
+      // Docs: https://github.com/vuetifyjs/vuetify-loader
+      VuetifyPlugin({
+        autoImport: true
+      }),
+      // Docs: https://github.com/gxmari007/vite-plugin-eslint
+      EslintPlugin(),
+      // Docs: https://github.com/electron-vite/vite-plugin-electron
+      ElectronPlugin(electronPluginConfigs),
+      RendererPlugin()
+    ]
+  }
+})

@@ -1,0 +1,158 @@
+Project Design:
+-> API
+GraphQL instead of REST for `tab recognition`
+-> Merge frontend
+The easiest way I found so far is to write a wrapper, import the original page, then inject data. For user input, ref into that original page to collect data, then send to the server. 
+
+Database Example:
+Electron + Postgres
+1. https://github.com/garrylachman/ElectroCRUD.git
+2. https://github.com/beekeeper-studio/beekeeper-studio.git
+Vue + Postgres
+1. https://github.com/edgarcandales/vue-express-postgresql
+
+-----------------
+-----------------
+-----------------
+(COMPLETED) Tab Example: 
+1) Perfect Vue3 Example with tab & admin level
+https://github.com/un-pany/v3-admin-vite/tree/main
+
+1) Electron Browser (work!!!)
+https://github.com/samuelmaddock/electron-browser-shell
+
+4) Electron + Vue3 (work!!!)
+https://github.com/topdevhere623/BrowserApp-Vue3_Electron/tree/main
+
+5) Electron + Vue3 + Vuetify (work!!!)
+https://github.com/kamalbalayev/vite-electron-vue3-vuetify-browser
+
+-----------------
+(COMPLETED) Explain file structure
+1) 
+https://github.com/cawa-93/vite-electron-builder
+
+-----------------
+Template
+1) **Vite + Electron + Vue 3 + Vuetify + TypeScript**
+- reuse: headbar
+**GOOD structure**
+https://github.com/jooy2/vutron/tree/master
+
+2) **no eslint, structure problem as 2**
+https://github.com/bibibala/vite-vuetify-electron
+
+3) **Vite + Electron + Vue 3 + Vuetify + TypeScript + MD3**
+- reuse: header bar, user-account btn
+**vue-cli, dif structure on renderer**
+https://github.com/GuMengYu/vue-vuetify-electron-template
+
+-----------------
+Electron Sample: 
+
+1) Financial management app
+https://github.com/hilanmiao/LanMiaoDesktop/tree/master
+-----------------
+
+2) **Good template but a little less similar in folder structure**
+- use vue-cli, not work
+https://github.com/PanJiaChen/electron-vue-admin/tree/master
+
+3) Fine template but some function invalid
+https://github.com/umbrella22/electron-vite-template/tree/mini-main
+
+1) Better folder structure but too blank
+https://github.com/electron-vite/electron-vite-vue/
+
+4) unfinished
+https://github.com/cockmake/Electron-Vue-Vite-Manual
+
+For Vue & Vuetify, 
+1) vue example
+https://github.com/yangjiakai/lux-ui/blob/main/src/router/landing.routes.ts
+
+2) vuetify example
+https://github.com/bobvinch/comfyui-webdemo/blob/master/app.vue
+
+
+
+
+
+
+
+Time: 1:25 - 1:50 PM (25 min)
+1. self intro
+Hi, my name is Yuan. (handshake) Nice to meet you. How you doing today?
+
+I am good thanks. Thank you so much for your time and I am supper excited to see you today. Sorry I catch the cold last weekend and have to put the mask on. Hope you don't mind.
+
+I am a computer science student and I have experience in web development, where I collaborated with data teams to build database management applications. 
+
+I actually pursued computer science because I see the need of software engineers who can actually understand and respect customers from their perspectives. 
+
+I really enjoy to delight our customers by bringing them higher efficiency and smoother user experience.
+
+Currently I am looking for the full-time role for the next year, so I dig a little into your company website and saw a related software engineer position I am really interested. 
+
+(Open question) Could you please tell me more about this position?
+
+2. common bq
+https://interviewing.io/guides/amazon-leadership-principles
+- why shift to cs
+A: I used to work in projects using the remote sensing technology like ArcGIS. That software doesn't implement the auto-path-calculation function and it stalled the entire project process.
+
+- why company
+A: customer obsession 
+
+- tell me a challenge
+A: 
+
+(customer obsession & creative)
+Situation:
+The product transaction varies based on type, manufacturer, and location, so for each update, the data team has to manually modify one-by-one, which is both time-consuming and easily have typo. 
+Task:
+Therefore, my team wants to implement a new feature to the existing platform such that multiple transactions can be updated at the same time while keeping a relatively simple and intuitive user workflow.
+Action:
+`pattern reference`
+Result: 
+more user-friendly
+less typo
+boost efficiency about 35%
+clean database
+
+- tell me a conflict
+(add different levels of manufacturers for cross-state transaction)
+(change database scheme to accommodate new architecture)
+Sample A:
+I had to reorganize the codebase and refactor the codebase. And I thought object-oriented programming was the best approach. But my teammate didn't buy in. For the sake of pushing something to prod quicker, we ended up going with his approach. But looking back on it, I wish I would have fought more for the object-oriented approach, and the reason is because user experience is really important to me. If we had the codebase nicely structured with object-oriented design and patterns and hierarchy, it'd make it way easier to maintain and more robust and less buggy. So later on we could develop cool new features for customers and push them out quicker.
+
+Sample B:
+“They said X. I said Y. And then time passed. They still said X and I still said Y. So, I did research on X and Y. More time passes. I showed this research to get buy-in from some Important People. Then I showed my research to the People Who Said X. More time passes. The People Who Said X weren't convinced until Z happened. Then the People Who Said X got on board and said Y.”
+
+Sample C:
+"One conflict I had with my manager was about integrating a third-party API. They thought this service would improve performance. My research showed it improved performance marginally but complicated maintenance significantly. After gaining support from the team lead, I walked my manager through the data flows. They weren't convinced; however, they were more open to the idea. At the urging of myself and the team lead, the manager took it to one of their stakeholders who agreed that the long-term maintenance costs were too high to justify using this service. This led to us not integrating the third-party service that had been proposed."
+
+
+
+
+key: focus on how you understood the other person’s perspective. This LP is about showing you know how to repair cooperation either reactively after or proactively before a difference of opinion.
+
+LP: Earn Trust
+(Tell me about a time when you had a disagreement with a colleague or manager)
+LP: Customer Obsession
+(Tell me about a time when you strongly disagreed with your manager or peer on something you considered very important to the business.)
+LP: Have Backbone; Disagree and Commit
+(Tell me about a time when you strongly disagreed with your manager or peer on something you considered very important to the business.)
+A:
+(can still use the multiple-transaction case, like denied by manager for security concern)
+(to-do list - deny by peers for deadline concern - explain the necessary - reevaluate all tasks based on customer benefits - meet the deadline, implement the feature, happy customer)
+
+- tell me a teamwork
+A: 
+
+- tell me a failure
+LP: Are Right, A Lot; Hire and Develop the Best
+
+- tell me a time when you have to compromise
+- tell me a time when you don't want to compromise when others believe it is good enough
+LP: Are Right, A Lot

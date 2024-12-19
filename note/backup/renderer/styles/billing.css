@@ -1,0 +1,41 @@
+.search-field-title {
+  font-size: 110%;
+  margin: 0%;
+  margin-bottom: 1%;
+  margin-left: 2%;
+  padding: 0%;
+  font-style: italic;
+}
+.upc-header {
+  color: white;
+  font-weight: bold;
+  padding: 0.2%;
+  margin: 0%;
+  font-size: 120%;
+  border: 1px solid #898ea1;
+  text-align: center;
+}
+.odd-row {
+  background-color: white;
+}
+.upc-data {
+  padding: 0.5%;
+  padding-top: 1.25%;
+  font-size: 120%;
+  text-align: center;
+}
+.list-data {
+  font-size: 120%;
+  text-align: center;
+}
+.truncate-column {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+.fit-content {
+  width: fit-content;
+  white-space: nowrap;
+  min-width: 60px;
+}

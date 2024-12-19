@@ -1,0 +1,199 @@
+Advice from Gus: 
+Kiosk - good to learn Electron
+Handscan - recommended by Travis
+Clynk Portal - learn the tab design -> clynk-portal/src/Pages/CustomerService/SessionCustomersStore.ts
+
+Dan:
+no refresh
+pack all db query into one module
+restrict # tabs opened at a time
+pop-up if unsaved change
+
+unclosable tab
+useAppErr.ts
+-> composable
+update ts
+add `vue-router` in dependency rather than d-dependency
+
+v-app -> router-view
+only one unique tab in the 
+reloading - prevent load (portal)
+restore open tabs
+
+send link for tabs??? -> just download excels will be easier
+
+---------------------------------------------------------------------------
+
+Q to Elva:
+1) how do you know which rules to change? does AJ send an excel sheet listing UPCs, or an email from distributor that informs you to yield a product line?
+--UPC list from distributors (beverage volume || material)
+----UPC search page has `volume`
+
+
+2) have a list of specific UPCs every time, or change by manufacturer
+3) given the billing rule pattern and filter/narrow down by manufacturer, how large will the result be?
+``````````````````
+Q from Dan:
+1) BR search design
+2) BR search result display (group by patterns)
+3) fix save/load search
+``````````````````
+err, user-f, archit, security
+
+start with objectives
+summary page + ppt
+
+work split
+	
+
+Flow: 
+1. share Elva's experience
+2. show the new BR search / results
+3. 
+clarify his expectation
+focus on the benefit to have a first version release
+	separate primary/ secondary/teri
+suggest to set a ready time to bring Elva / Jim in, let us know their thoughts
+
+
+
+
+
+
+Question: 
+1) multiple versions for adding BRs
+
+2) design patterns for ToDo
+
+3) workflow to add BRs
+Case 1: UPC with no BRs at all
+Case 2: UPC with partial active BRs
+case 3: UPC with partial inactive BRs only
+case 4: UPC with complete inactive BRs only
+
+
+
+Next: finish up all before Tuesday and prepare for Phil
+
+Later Problem: 
+1) multiple initiators (where the bag is dropped -> the initiator that gets billed -> different billing rules based on where its dropped)
+2) invoice (user role - accountant)
+
+--------------------------------------------------------------------
+TODO - only 1 person allowed to flag
+
+manufacturers / distributors / sellers begin the process collecting the deposit fee
+=> Beverage retailers charge customer
+=> customer charge redemption center
+=> rcenter return bottles + charge initiators for deposit&handling
+
+
+distributor: national bevg.
+
+Elva: bill to distri with invoice add -> distri bill to t.
+no billing agent??? -> Elva: billingAG = pickupAG, prefer to remove `pickupAG` if one has to be gone, will double check with Phil next time
+
+
+BR: only to complete UPCs
+BR: include regions
+
+BR: UPC used to have BR but expired, how to add new active BRs then?
+
+BR: batch edit
+
+
+Admin
+- threshold
+
+------------------------------------------------------------------
+
+Prepare BQ:
+
+1. Leadership Principle (reference Amazon LP)
+2. Recent BQ lists (be aware the corresponding LP)
+3. STAR: scenario, task, action, *result (include numbers to quantify impacts), learning
+3.1 For negative question such as `tell me a time u miss the ddl`, must mention what you learned after result!
+
+- solve conflict in a team
+- handle stress
+- deal with project failure
+- set priority in limited time
+- most proud accomplishment
+- contribution in a great project team
+- work above & beyond: to-do list
+
+Red Flag: 
+- complain co-workers
+- dishonest
+- `that's not my job`
+
+L5+:
+- the decision you made, why, focus on short-term fix or long-term solution
+- how to collaborate with teammates / cross-functional teams
+- quantify impacts / results (customer volume, saved time, increased revenue, impact to the current business)
+	- people impacted during this project: teammates / other teams / orgs / business verticals 
+--------------------------------------------------------------------
+GHC Prepare:
+- print resume
+- prepare self-intro
+- prepare bq
+- linkedin qr code as phone screen
+- locate target company (print map -> priority)
+
+Pattern:
+1 min - **elevator pitch**
+1-2 sentence why this company
+--------------------------------------------------------------------
+Fall 2024: 
+fix mern web app, ghc
+apply Microsoft
+apply meta
+
+
+Spring 2025: random (networking) + AI + 5800
+June -> 24ng apply
+
+Apply: LinkedIn + official website + RippleMatch (+ glassdoor + indeed + wayfair)
+Visa Plugin: myvisajobs
+
+OPT: 90 days of unemployed -> 12 months, STEM allow to extend to 36 months
+H1B: pick during the OPT -> STEM: work 6 years in US
+
+--------------------------
+Stripe:
+merchant - MCC - dif fraud tolerance
+
+mark if ever >= threshold
+only mark if has transaction
+
+Input: 
+1. code list - not fraud, 
+["approved", "invalid_pin", "expired_card"]
+2. code list - fraud,
+["do_not_honor", "stolen_card", "lost_card"]
+3. mcc table on fraud threshold, 
+retail, 5
+airline, 2
+restaurant, 10
+venue, 3
+4. merchant table with account ID <-> corresponding MCC
+acct_1, airline
+acct_2, venue
+acct_3, retail
+5. min transactions to evaluate fraud
+0
+6. table of charges
+[charge, charge-id, account-id, amount, code]
+CHARGE, ch_1, acct_1, 100, do_not_honor
+CHARGE, ch_2, acct_1, 200, approved
+CHARGE, ch_3, acct_1, 300, do_not_honor
+CHARGE, ch_4, acct_2, 100, lost_card
+CHARGE, ch_5, acct_2, 200, lost_card
+CHARGE, ch_6, acct_2, 300, lost_card
+
+Output:
+lexi-sort list of fraud
+
+
+
+

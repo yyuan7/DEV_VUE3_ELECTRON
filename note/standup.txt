@@ -1,0 +1,683 @@
+08/20/2024
+Today we will combine information received from Dan and Elva to improve our design, make it more adapted to current situation. 
+Later we will meet with Dan to get the advice and clarification on the expectation on the first release and future outcome.
+
+08/21/2024
+Today we will:
+- update the dashboard page for UPC products
+- also start to migrate everything from paper sketch onto MockFlow
+- no roadblocks
+
+08/23/2024
+Today we will:
+- keep working on the MockFlow UI design
+- schedule meeting with Eliza about portal UI
+
+08/26/2024
+Today we will:
+- add more MockFlow UI design
+- meet with Dan this afternoon
+(meet with Elva to clarify `saved filter setting` for UPC search)
+
+08/27/2024
+Today we will:
+- focus on the admin action and search aspect of MockFlow UI design based on the meeting yesterday
+- have a meeting with Dan this afternoon
+- prepare a QA list for Jim
+
+08/28/2024
+Today we will:
+- work on the UI design for managing statewide fees, including deposit, handling and pickup processing fee
+- improve and complete the UPC information part, as we've got most of them approved by Dan yesterday
+
+08/30/2024
+Today we will:
+- finish up the administer and UPC management action, getting ready to show those parts with Dan next week
+- also try to clean up the billing rule management part, no roadblocks
+
+09/03/2024
+Previous outcome:
+- continued working on UI design
+	- finished designing admin actions page, and made more progress on finalizing the UPC and billing rule management pages
+- spent some time reorganizing everything we had and figuring out the last few things we need to make
+
+Today we will:
+- start to work on the billing rule management part of UI, which is the only piece left now!
+- schedule a in-person meeting with Dan, see if he approves or has innovative opinions about our exiting outcomes
+
+09/04/2024
+Today we will:
+- continue in the billing rule management. This part is a little bit more complicated than expected, so we may spend longer time on it. 
+
+09/06/2024
+Today we will:
+- keep working on the update of admin-level operations, basically trying to put ourselves into Dan's shoes and mimic backend logic
+- later have a meeting with Dan for touch base
+
+09/09/2024
+Today we will:
+- finish up the admin designs, as Dan nod to most of them
+- work on the design for updating multiple billing rules simultaneously
+- prepare the meeting with Dan tomorrow
+
+09/10/2024
+Today we will:
+- Given that we did encounter some complexity, which will discuss with Dan in today's meeting. 
+
+
+09/12/2024
+Today we will:
+- finish up UPC/Admin
+- main concern: manufacturer, To Do, Add BRs for UPCs with incomplete active BRs
+- meet with Dan on 3:30 PM
+
+09/13/2024
+Today we will:
+- have a meeting with Dan at 10:30
+- will go over (multiple levels of manufacturers; ToDo list; new workflow to add / edit BRs), revise or continue based on his thought
+
+09/16/2024
+Today we will:
+- improve the workflow of adding unknown UPCs into the to-do list and editing multiple billing rules
+
+09/17/2024
+Today we will:
+- enhance the design logic for editing multiple billing rules
+- meet with Dan for verification
+
+09/18/2024
+Today we will:
+- meet with Elva, together we'll summarize all possible scenarios she will add or update billing rules
+- align our designated search plan with her case
+(Dan approved all designs, asking for 1) slides team -> Jim/Elva -> Phil presentation 2) split job for frontend/backend)
+
+09/19/2024
+Today we will:
+- clean up all pages, fix any minor inconsistency and sample data
+- work on the slides which will be presented to dev next Wednesday
+
+
+09/23/2024
+Today we will:
+- organize the presentation and at the same time review our UI designs, inspecting any missing pages and inconsistent data
+
+09/24/2024
+Today we will:
+- manage all pages and write scripts for [login(TODO + list*2) + BR + High-Admin]
+- later the afternoon will be gone with Dan and Renee to Roux
+
+09/27/2024
+Today we will:
+- learn from the `electron-processing-handscan` repo from Travis's meeting yesterday
+- set up the repo environment
+- set the template and work on vue component
+
+09/30/2024
+Previously:
+- set up the repo environment using vue-cli based on the `electron-processing-handscan` repo and the `clynk-portal` repo
+	- add eslint, prettier, sass, husky, vuetify
+	- conflicting peer dependency when install `vuetify`
+		- solved by `--legacy-peer-deps`: ignore all peerDependencies when installing
+Today we will:
+- fix vuetify + add layout
+
+10/01/2024
+Previously:
+- following Gus's advice, reset the repo using vite based on the `kiosk` repo
+- settle the page layout and header
+
+Today we will:
+- .env, axios, API basepoint, router, svg
+- add more component
+
+10/02/2024
+Previously:
+- study on tab example from Travis
+- sass configuration
+- axios install and encapsulate request
+- create fake user info to test base api points (using vite-plugin-mock, will uninstall later)
+
+Today we will:
+- push both frontend components and backend api dev
+- incorporate vuetify components into the encapsulated axios request file
+- router setup
+
+10/03/2024
+Previously:
+- add api interface for users
+- set the router for login and home page
+- run into problems when working in response interceptor, not solved - may ask help (get suggestions from Travis, will push to later)
+- meet with Travis to discuss our progress, help peer review (he had suggestions on )
+
+Quote from Travis:
+1. design of unclosable tab
+2. to solve the question of invoking snackbar in the src/utils/request.ts, useAppErr.ts -> composable
+3. update ts version (always check for the most updated version)
+4. add `vue-router` in dependency rather than dev-dependency (dev-dependency will not be added in the production stage)
+5. src/App.vue: use <v-app><v-main><router-view> rather than simple <router-view> (will be changed later as well)
+6. need to schedule a meeting with Dan, checking up for `url while multiple tabs`, `unclosable tabs`, `max number of tabs allowed to open at a time`, and `tabs restore after refreshing or sudden close`, (and database)
+
+Today we will:
+- implement login function for both frontend and backend verification, including the router and store
+- implement the tab layout based on the code sample from Travis, mostly just shifting into vuetify
+
+10/07/2024
+Previously:
+- implement login feature (frontend & backend)
+
+Today we will:
+- I will implement layout switch and Pauline will continue to work on the tab setting
+- if I can get the layout thing done, I will also dig into the setting of page refreshing and restore after sudden crash
+- touchbase with Dan to verify our progress as well as technical requirements
+
+10/08/2024
+Previously:
+- Pauline completed the tab component
+- open hour - meet with Dan for touchbase, learned to shift to Electron desktop app
+- Gus helped a lot in handscan desktop app set up and provided suggestion for Electron apps (1hr+)
+- afternoon - work with Renee for spring-2025 coop filter (2hr+)
+
+Today we will:
+- Pauline: continue to work on reusable components
+- I will inspect the existing project and shift into the Electron desktop app as Dan expected
+
+10/14/2024
+Previously:
+- 10/09 - PTO
+- 10/10 - PTO + WFH
+- 10/11 - WFH
+- 10/12 - Picnic
+
+Today we will:
+- Pauline will work on the UPC page
+- Yuan will work on some configuration then may turn to page implementation
+
+10/15/2024
+- Yuan 
+Yesterday: setup electron configuration
+Today: setup the backend routing for the electron app
+remove the touchbase meeting today
+- Pauline
+yesterday: work on UPC management pages, focusing on UPC add process
+today: finish UPC add pages, work on menu components and UPC dashboard
+
+10/17/2024
+- Yuan 
+Yesterday: setup electron routing, landing page routes faults
+Today: try to fix the landing routes, will seek help from Gus or Travis if not work out
+- Pauline
+Today: work on the dashboard component
+ 
+10/18/2024
+- Yuan
+Yesterday: 
+- solve electron Uncaught TypeError: Cannot read properties of undefined (reading 'getAppConfig') at useConfig.ts:3:36
+- setup the preload file to solve page content transfer issue
+Today: 
+- test all work and implement user authorization
+
+10/21/2024
+- Yuan
+Friday: 
+- Gus advice on the backend settings
+- fix routing bugs
+Today: 
+- work on the landing page construction
+- integrate Pauline's UPC pages
+
+10/22/2024
+- Yuan
+Yesterday: 
+- implement the user account in the header
+Today: 
+- header + landing page
+
+10/23/2024
+- Yuan
+Yesterday: 
+- touchbase 
+Today: 
+- implement the tab function
+-> incorporate the existing frontend design
+-> set routes and backend data transfer based on online example
+-> (Thursday) may reach to anyone who can help
+
+10/25/2024
+- Yuan
+Yesterday: 
+- fix issues (webview) caused by vue not recognizing electron element
+- merge tab and upc pages 
+Today: 
+- home + billing rule pages
+
+10/28/2024
+- Yuan
+Last Friday: 
+- debug with Pauline then merge into the dev branch
+Today: 
+- revise the file structure, adding cache settings such as local storage and session cache for more flexible and responsive tab designs
+- hopefully finish by today or tomorrow so someone can help review before Halloween party
+
+10/29/2024
+- Yuan
+Yesterday: 
+- pumpkin but no outcome
+- debug with Pauline
+- file structure revise & reset the router setting
+Today: 
+- continue to revise the file structure and improve the tab setting
+
+10/30/2024
+- Yuan
+Yesterday: 
+- login, avatar in profile, and route listener
+- have enable cache for opening tabs
+- meet problems on the content transfer
+Today: 
+- fix this issue and finish up the tab setting
+
+11/01/2024
+- Yuan
+Yesterday: 
+- meet with Dan for the touchbase
+- encounter the bug that tabs related to role permission cannot be closed
+Today: 
+- fix the tab bugs and set the tab number restriction
+
+11/04/2024
+- Yuan
+Friday: 
+- fix the problem with tag functions so everything is merged and up-to-date
+- also add the refresh function for selected tab
+Today: 
+- implement the workflow of data transfer for the search function from frontend to backend
+- have Gus/Travis 30 minutes to review the tab store setting to ensure info saved when switching tabs
+
+11/05/2024
+- Yuan
+Yesterday: 
+- review the backend, especially permission setting with Gus and learn the current KeyClock setting
+- setup routes for upc crud management
+Today: 
+- touchbase with Travis, which plans to review our current setting & learn his advice of connecting to database
+- implement the upc search function
+Note with Travis:
+- after tabs hit MAX -> snackbar notification
+- eventually go to the CLYNK portal, not now because portal is in vue2
+- refresh window should restore all tabs rather than the affix & active tag
+- if users close multiple tags then restore, should only restore tags before reaching max
+- database: postgres or sql-server (currently used, plan to migrate)
+- Morning: app - web service (-can be a node?) - database
+
+11/08/2024
+- Yuan
+Yesterday: 
+- WEDNESDAY meet with Travis/Gus for existing - permission ensure
+- meet with Eliza talking about how to plan our code work
+- currently plan to set up database after implementing most functions
+- implement the partial search function, but encounter bugs about content re-rendering based on pagination
+Today: 
+- fix pagination
+- study Travis's sample code 
+
+11/11/2024
+- Yuan
+Friday: 
+- Pauline and I study sample code provided by Travis 
+- start to connect the frontend upc pages to the backend, especially the data transfer from server to the client-side
+Today: 
+- continue to work on it. no blocker so far
+
+11/12/2024
+- Yuan
+Yesterday: 
+- complete the upc landing page and work on the search page
+- mostly install the data transfer (between parent and children components) functions like the clear and search buttons
+Today: 
+- finish the search page and work on the upc add page
+- merge admin page may be pushed behind as all admin pages in js not ts
+
+11/13/2024
+- Yuan
+Yesterday: 
+- complete the upc search function
+- encounter problems for the auto-complete part when users type
+Today: 
+- finish it today
+- then merge admin pages
+
+11/15/2024
+- Yuan
+Yesterday: 
+- complete the upc search page
+- Eliza and Pauline helped solve a vuetify component issue
+Today: 
+- fix the last-scanned date range bug
+- finish up upc result & work on the upc edit page
+- touchbase
+
+11/18/2024
+- Yuan
+Friday: 
+- fix bugs on upc search and corresponding result page
+Today:
+- connect all existing pages to router so they can be opened on the electron app
+- touchbase
+- question to Dan: since open hour cancelled, will we have a meeting at 10 with Travis or Matt?
+
+11/19/2024
+- Yuan
+Yesterday: 
+- Meet w/ Travis, Matt, and Adon (tmp compromise for frontend & very helpful backend design insight)
+- Meet w/ Dan for the billing app documentation
+- spend rest of the day completing it
+Today:
+- connect admin pages to router, at this stage it just ensure that everything can be loaded under corresponding url
+- complete btn functions or formalize data injection later
+
+11/20/2024
+- Yuan
+Yesterday: 
+- Meet w/ Dan for the billing app documentation
+- simplify the router setting for UPC add and edit process
+- get rid of all helper files for upc, will handle the data injection later
+Today:
+- action-based and time-based re-authentication
+- connect admin router
+
+11/22/2024
+- Yuan
+Yesterday: 
+- set routes for all existing pages & debug with Pauline
+- update session storage for admin re-authorization & timestamp
+Today:
+- meeting with Matt and Adon for action-based re-authorization
+- auto logout
+
+Re-Authentication Clarification from Dan->Adon:
+- once go to the ADMIN page, receive a tmp token (like 5-min)
+	- any behavior at admin-level should refresh that token
+	- once pass 5-min w/n refreshing, the tmp token expires & the admin has to enter the password again
+- NOT overlap with auto-logout
+	- erase the session data
+
+11/25/2024
+- Yuan
+Last Friday: 
+- meet with Adon and Matt to clarify re-authorization
+Today:
+- in this half way, gonna finish up this function today, then work on api
+
+11/26/2024
+- Yuan
+Yesterday: 
+- finish the auto logout and admin re-authorization
+- Gus helped me debug the issue of missing contents after opening multiple tabs
+Today:
+- write api for data injection in upc pages
+
+11/27/2024
+- Yuan
+Yesterday: 
+- work on the api for upc pages, currently in the smooth progress
+Today:
+- encounter problems might caused by vue-router, still work on it
+
+12/02/2024
+- Yuan
+Last Friday: 
+- upc part fully functioned, minor details (volume range & isComplete definition - when add UPC)
+Today:
+- work on the admin 
+
+12/03/2024
+- Yuan
+Yesterday: 
+- minor fix on the tag restriction setting
+- work on the landing page for manufacturers/initiator/etc
+Today:
+- complete that & complete the corresponsive dashboard
+- collaborate Pauline to go through current work & minor adjust of UPC
+
+12/06/2024
+- Yuan
+Yesterday: 
+- fix some routing guard issue
+- complete the search for manufacturers/initiator/etc
+- left some works on the dashboard
+Today:
+- which will be wrapped up today
+- the expectation is to make low-admin fully functionally by this week
+
+12/09/2024
+- Yuan
+Yesterday: 
+- data injection issue from parent to children due to vue lifecycle
+Today:
+- fix the issue and expect to make low-admin fully functionally
+
+12/10/2024
+- Yuan
+Yesterday: 
+- modify the contact setting
+- work on the negotiated fee
+Today:
+- async my outcome with Pauline's so Eliza can see the most updated and functional view
+- continue to implement the fee part
+
+12/11/2024
+- Yuan
+Yesterday: 
+- solve conflicts caused by code merging
+- have pickup processing fee questions, which just being answered by Jim
+Today:
+- work on the negotiated fee
+- meet with Eliza (half-day)
+
+12/13/2024
+- Yuan:
+Yesterday:
+- solve branch conflicts & merge
+- improve the contact structure & corresponding API and backend based on Eliza's suggestion
+- help Pauline on some routing issue
+Today:
+- work on the high admin part
+
+12/16/2024
+- Yuan:
+Last Friday:
+- work on the issue related to modify contacts and their priorities 
+Today:
+- work on the fee management part
+- prepare for the ultimate presentation
+
+12/17/2024
+- Yuan:
+Yesterday:
+- work on the presentation outline
+- discuss issues related to modify contacts and their priorities 
+Today:
+- mock presentation with Renee
+
+
+Tomorrow:
+TODO: 
+- schedule Renee for mock team presentation
+- music when login
+- edit-UPC: notes required
+- add-UPC: should all fields be required?
+- is the UPC info complete if missing 'lastScanDate' and 'totalScanUnit' fields?
+
+- Travis Note (11/05/2024)
+
+- Dan: 
+//// push to later ////
+#) keyClock -> which realm??
+E.x.: https://github.com/CLYNKdotCOM/ct-clynk-portal/blob/develop/src/main.ts
+//////////////////////
+1) project design question
+-> search: 
+- not include results if missing fields for corresponsive filter fields
+- upc scanned range - necessary for 2 years?
+-> tab: only ONE search page, but can be several result pages; similarly multiple upc edit tabs at the same time
+-> edit: not accept partial search?
+
+-> upc part is relatively straight forward, now moving slow
+1. am getting used to vuetify
+2. spend time to install functions for like the clear button and auto-complete functions
+
+2) communication with Jim
+3) (NEW) state selection on info page rather than home page
+-> depend on how quickly the data is loaded
+4) (NEW) when will the DB interface ready?
+
+
+Last Scanned
+- past days / week / month
+- since xx date
+
+Low-Priority issue:
+- open admin home page -> click manu -> user avatar disappear
+
+Interesting Design but no need to worry here:
+- prohibit multiple account logged in the same browser
+------------------------------------------------
+
+------------------------------------------------
+
+------------------------------------------------
+Uninstall: 1) vite-plugin-mock; 2) element-plus; 3) vue-loader?
+
+
+
+
+
+
+Smile + Eye Contact
+It's nice to meet you
+
+What makes you fit?
+Why interested in this role/company/industry?
+What's my positive traits that serve me well in this role?
+
+
+Traits: 
+patient - adore challenge - problem-solving
+adaptive - quick learning
+like to plan ahead - all co-workers are delight with smooth progress and reasonable workload - succeed the project 
+communication / teamwork - collaborative with cross-functional teams
+
+Recent:
+
+STAR - DB maintenance
+
+Basic Tech Question based on Resume:
+1. a web platform written by vue3, typescript, and postgreSQL
+-> why vue as frontend framework
+A: 
+-> why typescript
+A:
+-> why REST API
+A: 
+-> why PostgreSQL as database
+A: 
+-> biggest challenge during implementation
+A: 
+-> impact
+A: 
+
+2. geneweaver - capstone
+-> why REST API
+
+-> impact
+
+3. a eCommerce website using the mern tech stack
+-> why mern tech stack
+
+4. SpringBoot Website
+-> why spring
+
+-> why spring boot
+
+-> why spring mvc
+
+-> why kafka
+
+-> why redis
+
+-> why Apache and Nginx
+
+-> sql vs no-sql
+------------------------------------------------
+Sure! Here are concise answers to each of your questions:
+
+### Why Spring
+Spring is a powerful framework for building Java applications, providing comprehensive infrastructure support. It promotes loose coupling through Dependency Injection, making applications easier to manage and test. Additionally, its extensive ecosystem and modular architecture allow developers to integrate various functionalities seamlessly.
+
+### Why Spring Boot
+Spring Boot simplifies the setup and development of Spring applications by eliminating boilerplate configuration. It offers convention over configuration, allowing developers to get started quickly with minimal setup. Its embedded server support enables easy deployment and testing, making it ideal for microservices and rapid application development.
+
+### Why Spring MVC
+Spring MVC is a robust framework for building web applications, following the Model-View-Controller design pattern. It provides clear separation of concerns, making code easier to manage and maintain. Its integration with Spring's core features, like security and data access, enhances the development experience and performance.
+
+### Why Kafka
+Kafka is a distributed event streaming platform designed for high-throughput data processing. It enables real-time data pipelines and streaming applications, ensuring fault tolerance and scalability. Its ability to handle large volumes of data efficiently makes it suitable for use cases like log aggregation, data integration, and real-time analytics.
+
+### Why Redis
+Redis is an in-memory data structure store that excels in performance and scalability. It provides fast data access, making it ideal for caching and session management in web applications. Additionally, Redis supports various data types and offers features like pub/sub messaging, making it versatile for different use cases.
+
+### Why Apache and Nginx
+Apache and Nginx are popular web servers that handle HTTP requests and serve static content efficiently. 
+- Apache is highly configurable with a rich module ecosystem
+- Nginx is known for its performance and resource efficiency, especially under high traffic. 
+Using them together can optimize load balancing and improve application performance.
+
+### SQL vs No-SQL
+SQL - strong consistency and ACID properties, idea for structured data
+NoSQL - flexibility, suitable for big data and real-time applications
+------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. npm uninstall -D vite-plugin-mock mockjs  
+2. npm uninstall element-plus
+-> src/render/main.ts
+-> tsconfig.json
+-> src/render/utils/request
+3. pinia store before use!
+-> npm i pinia-plugin-persistedstate
+
+
+cache
+
+pagination 1 - 5 pages
+
+
+
+
+
+
+
+
+
+Composable <=> store + api, but why make this choice?
+- authentication: store prefer?
+- search / filter: both should work?
+A: can stick with store / api
+
+Kiosk Backend Example:
+- https://github.com/CLYNKdotCOM/electron-customer-kiosk-service/tree/develop/src/database
+
+database entry
+- Query Example: 
+https://github.com/CLYNKdotCOM/api-service-customers/blob/develop/src/routes/browseCustomers.ts
